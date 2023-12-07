@@ -251,14 +251,14 @@ SELECT CONCAT(C.Nombre_1, ' ', IFNULL(C.Nombre_2,''), ' ', C.Apellido_1, ' ', IF
 
 10. Nombres de Zonas y cantidad de rutas que tienen programadas (Contar)
 ```sql
-SELECT Z.id_Zona, Z.Zona, COUNT(*) AS RUTAS_PROGRAMADAS FROM ZONA Z LEFT JOIN Rutas_Zona RZ ON RZ.id_Zona=Z.id_Zona LEFT JOIN RECORRIDO Re ON RZ.id_Ruta=Re.id_Ruta GROUP BY Z.id_Zona;
+SELECT Z.id_Zona, Z.Zona, COUNT(RZ.id_Zona) AS RUTAS_PROGRAMADAS FROM ZONA Z LEFT JOIN Rutas_Zona RZ ON RZ.id_Zona=Z.id_Zona LEFT JOIN RECORRIDO Re ON RZ.id_Ruta=Re.id_Ruta GROUP BY Z.id_Zona;
 ```
 | id_Zona | Zona          | RUTAS_PROGRAMADAS |
 |---------|---------------|-------------------|
 |       1 | Norte         |                 7 |
-|       2 | Sur           |                 1 |
-|       3 | Oriente       |                 1 |
-|       4 | Occidente     |                 7 |
+|       2 | Sur           |                 0 |
+|       3 | Oriente       |                 0 |
+|       4 | Occidente     |                 0 |
 |       5 | Floridablanca |                14 |
-|       6 | Girón         |                 1 |
-|       7 | Piedecuesta   |                 1 |
+|       6 | Girón         |                 0 |
+|       7 | Piedecuesta   |                 0 |

@@ -118,4 +118,5 @@ SELECT CONCAT(C.Nombre_1, ' ', IFNULL(C.Nombre_2,''), ' ', C.Apellido_1, ' ', IF
 SELECT CONCAT(C.Nombre_1, ' ', IFNULL(C.Nombre_2,''), ' ', C.Apellido_1, ' ', IFNULL(C.Apellido_2,'')) AS CONDUCTOR, R.Nom_Ruta, Re.Dia FROM CONDUCTOR C INNER JOIN RECORRIDO Re ON Re.id_Conductor=C.id_Conductor INNER JOIN RUTA R ON R.id_Ruta=Re.id_Ruta WHERE R.Tiempo_Ruta>'2:00:00';
 
 -- CONSULTA 10: Nombres de Zonas y Cantidad de Rutas que tienen programadas
-SELECT Z.id_Zona, Z.Zona, COUNT(*) AS RUTAS_PROGRAMADAS FROM ZONA Z LEFT JOIN Rutas_Zona RZ ON RZ.id_Zona=Z.id_Zona LEFT JOIN RECORRIDO Re ON RZ.id_Ruta=Re.id_Ruta GROUP BY Z.id_Zona;
+SELECT Z.id_Zona, Z.Zona, COUNT(RZ.id_Zona) AS RUTAS_PROGRAMADAS FROM ZONA Z LEFT JOIN Rutas_Zona RZ ON RZ.id_Zona=Z.id_Zona LEFT JOIN RECORRIDO Re ON RZ.id_Ruta=Re.id_Ruta GROUP BY Z.id_Zona;
+
