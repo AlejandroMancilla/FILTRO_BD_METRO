@@ -1,4 +1,4 @@
-#EXAMEN_BD_TBM
+# EXAMEN_BD_METRO_TBM
 
 #### *Problematica*
 Usted ha sido contratado por el consorcio TBM, Transporte-Bucaramanga-Metropolitana para construir una solución informática que ayude a los gestores del nuevo sistema de transporte a planear sus rutas de viaje, de manera eficiente.
